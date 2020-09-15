@@ -8,6 +8,7 @@ import { SIGNUP_FAILED } from './actionTypes';
 import { SIGNUP_SUCCESS } from './actionTypes';
 import { LOGOUT_USER } from './actionTypes';
 import { AUTHENTICATE_USER } from './actionTypes';
+import { CLEAR_AUTH_STATE } from './actionTypes';
 
 export function startLogin() {
   return {
@@ -42,7 +43,7 @@ export function login(email, password) {
       .then((data) => {
         console.log('data', data);
         if (data.success) {
-          localStorage.setItem('token',data.data.token)
+          localStorage.setItem('token', data.data.token);
           dispatch(loginSuccess(data.data.user));
           // dispatch action to save user
           return;
@@ -110,5 +111,11 @@ export function signupFailed(errorMessage) {
   return {
     type: SIGNUP_FAILED,
     error: errorMessage,
+  };
+}
+
+export function clearAuthState() {
+  return {
+    type: CLEAR_AUTH_STATE,
   };
 }

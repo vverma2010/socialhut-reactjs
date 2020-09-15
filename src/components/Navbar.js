@@ -45,7 +45,9 @@ class Navbar extends React.Component {
                 alt="user-dp"
                 id="user-dp"
               />
-              <span>{auth.user.name}</span>
+              <Link to="/settings">
+                <span className="name">{auth.user.name}</span>
+              </Link>
             </div>
           )}
           <div className="nav-links">

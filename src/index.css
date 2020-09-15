@@ -228,15 +228,25 @@ nav .user {
 }
 nav span {
   margin-left: 10px;
+  text-decoration: none;
+  margin-top: -3px;
 }
 nav .right-nav {
   display: flex;
   color: #2471a3;
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 22px;
   cursor: pointer;
+}
+.name{
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+nav .right-nav span:hover {
+  text-decoration:none;
 }
 nav .nav-links ul {
   display: flex;
@@ -246,6 +256,7 @@ nav .nav-links ul li {
   color: black;
   padding: 0 4px;
 }
+
 nav .nav-links ul li a {
   text-decoration: none;
 }
@@ -264,7 +275,7 @@ nav .nav-links ul li:hover {
 }
 .search-container input {
   background: #ffffff;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #131819;
   box-sizing: border-box;
   border-radius: 3px;
   height: 40px;
