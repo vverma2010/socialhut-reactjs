@@ -2,7 +2,7 @@ import React from 'react';
 import '../index.css';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/posts';
-import { Home, Navbar, Page404, Login, Signup } from './index';
+import { Home, Navbar, Page404, Login, Signup, Settings } from './index';
 import PropTypes from 'prop-types';
 import {
   BrowserRouter as Router,
@@ -13,8 +13,6 @@ import {
 import * as jwtDecode from 'jwt-decode';
 import { authenticateUser } from '../actions/auth';
 
-const Settings = () => <div>Settings</div>;
-
 const PrivateRoute = (privateRouteProps) => {
   const { isLoggedIn, path, component: Component } = privateRouteProps;
 
@@ -22,7 +20,18 @@ const PrivateRoute = (privateRouteProps) => {
     <Route
       path={path}
       render={(props) => {
-        return isLoggedIn ? <Component {...props} /> : <Redirect to="/login" />;
+        return isLoggedIn ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/login',
+              state: {
+                from: props.location,
+              },
+            }}
+          />
+        );
       }}
     />
   );

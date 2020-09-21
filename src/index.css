@@ -240,13 +240,13 @@ nav .right-nav {
   line-height: 22px;
   cursor: pointer;
 }
-.name{
+.name {
   display: inline-block;
   text-decoration: none;
   color: black;
 }
 nav .right-nav span:hover {
-  text-decoration:none;
+  text-decoration: none;
 }
 nav .nav-links ul {
   display: flex;
@@ -452,12 +452,16 @@ nav .nav-links ul li:hover {
 .settings {
   display: inline-flex;
   flex-direction: column;
-  background: #fff;
+  background: #232931;
   padding: 30px;
   border-radius: 6px;
   margin-top: 50px;
   margin-left: 30px;
   width: 40%;
+  border: none;
+
+  box-shadow: 7px 7px 15px #000000, -7px -7px 15px #3d4652;
+  /* filter: invert(1) hue-rotate(180deg); */
 }
 .settings .img-container {
   display: flex;
@@ -465,7 +469,9 @@ nav .nav-links ul li:hover {
   justify-content: center;
 }
 .settings .img-container img {
+  border-radius: 100%;
   height: 100px;
+  box-shadow: 6px 6px 10px #121212;
 }
 .settings .btn-grp {
   display: flex;
@@ -486,18 +492,19 @@ nav .nav-links ul li:hover {
   outline: none;
 }
 .settings .edit-btn {
-  border: 1px solid #ef7917;
+  border: 1px solid #ff4d00;
   box-sizing: border-box;
-  color: #ef7917;
+  color: #ff4d00;
+  background-color: #131419;
 }
 .settings .save-btn {
-  background: #ef7917;
+  background: #ff4d00;
   color: #fff;
   border: none;
   padding: 10px 20px;
 }
 .settings .go-back {
-  color: #ef7917;
+  color: #ff4d00;
   margin-top: 7px;
   font-size: 13px;
 }
@@ -518,6 +525,9 @@ nav .nav-links ul li:hover {
 }
 .settings .field input {
   margin-top: 6px;
+}
+.settings .field-value {
+  color: #ff4d00;
 }
 /* CREATEPOST */
 .create-post {
