@@ -1,14 +1,18 @@
-import { LOGIN_START } from './actionTypes';
 import { APIurls } from '../helpers/url';
-import { getFormBody } from '../helpers/utils';
-import { LOGIN_FAILED } from './actionTypes';
-import { LOGIN_SUCCESS } from './actionTypes';
-import { SIGNUP_START } from './actionTypes';
-import { SIGNUP_FAILED } from './actionTypes';
-import { SIGNUP_SUCCESS } from './actionTypes';
-import { LOGOUT_USER } from './actionTypes';
-import { AUTHENTICATE_USER } from './actionTypes';
-import { CLEAR_AUTH_STATE } from './actionTypes';
+import { getFormBody, getAuthTokenFromLocalStorage } from '../helpers/utils';
+import {
+  AUTHENTICATE_USER,
+  CLEAR_AUTH_STATE,
+  LOGIN_FAILED,
+  LOGIN_START,
+  LOGIN_SUCCESS,
+  LOGOUT_USER,
+  SIGNUP_FAILED,
+  SIGNUP_START,
+  SIGNUP_SUCCESS,
+  EDIT_USER_FAILED,
+  EDIT_USER_SUCCESSFUL,
+} from './actionTypes';
 
 export function startLogin() {
   return {
@@ -117,5 +121,53 @@ export function signupFailed(errorMessage) {
 export function clearAuthState() {
   return {
     type: CLEAR_AUTH_STATE,
+  };
+}
+
+export function editUserFailed(error) {
+  return {
+    type: EDIT_USER_FAILED,
+    error: error,
+  };
+}
+
+export function editUserSuccessful(user) {
+  return {
+    type: EDIT_USER_SUCCESSFUL,
+    user: user,
+  };
+}
+
+export function editUser(name, password, confirmPassword, userId) {
+  return (dispatch) => {
+    const url = APIurls.editProfile();
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Bearer ${getAuthTokenFromLocalStorage()}`,
+      },
+      body: getFormBody({
+        name,
+        password,
+        confirm_password: confirmPassword,
+        id: userId,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('EDIT PROFILE data', data);
+        if (data.success) {
+          dispatch(editUserSuccessful(data.data.user));
+
+          if (data.data.token) {
+            localStorage.setItem('token', data.data.token);
+          }
+          return;
+        }
+
+        dispatch(editUserFailed(data.message));
+      });
   };
 }
