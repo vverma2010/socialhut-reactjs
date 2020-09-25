@@ -70,7 +70,7 @@ export function logoutUser() {
   };
 }
 
-export function signup(email, name, password, cofirmPassword) {
+export function signup(email, name, password, confirmPassword) {
   return (dispatch) => {
     const url = APIurls.signup;
     fetch(url, {
@@ -81,7 +81,7 @@ export function signup(email, name, password, cofirmPassword) {
       body: getFormBody({
         email,
         password,
-        confirm_password: cofirmPassword,
+        confirm_password: confirmPassword,
         name,
       }),
     })

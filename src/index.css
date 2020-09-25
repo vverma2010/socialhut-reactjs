@@ -426,6 +426,7 @@ nav .nav-links ul li:hover {
 
 .no-friends {
   display: flex;
+  color: crimson;
   justify-content: center;
   margin: 20px 0;
 }

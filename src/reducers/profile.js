@@ -11,7 +11,7 @@ const initialProfileState = {
   inProgress: false,
 };
 
-export default function posts(state = initialProfileState, action) {
+export default function profile(state = initialProfileState, action) {
   switch (action.type) {
     case USER_PROFILE_SUCCESS:
       return {

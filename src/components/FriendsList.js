@@ -1,5 +1,5 @@
 import React from 'react';
-import { FriendsListItem } from '.';
+import { FriendsListItem } from './';
 
 const FriendsList = (props) => {
   return (

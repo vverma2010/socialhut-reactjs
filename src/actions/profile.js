@@ -6,6 +6,12 @@ import {
 import { APIurls } from '../helpers/url';
 import { getAuthTokenFromLocalStorage } from '../helpers/utils';
 
+export function startFetchUserProfile() {
+  return {
+    type: FETCH_USER_PROFILE,
+  };
+}
+
 export function userProfileSuccess(user) {
   return {
     type: USER_PROFILE_SUCCESS,
@@ -17,12 +23,6 @@ export function userProfileFailure(error) {
   return {
     type: USER_PROFILE_FAILURE,
     error: error,
-  };
-}
-
-export function startFetchUserProfile() {
-  return {
-    type: FETCH_USER_PROFILE,
   };
 }
 
@@ -40,7 +40,11 @@ export function fetchUserProfile(userId) {
     })
       .then((response) => response.json())
       .then((data) => {
-        dispatch(userProfileSuccess(data.data.user));
+        if (data.success) {
+          dispatch(userProfileSuccess(data.data.user));
+        } else {
+          dispatch(userProfileFailure(data.message));
+        }
       });
   };
 }

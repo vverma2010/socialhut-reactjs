@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 function FriendsListItem(props) {
   return (
     <div>
@@ -11,7 +12,7 @@ function FriendsListItem(props) {
           />
         </div>
 
-        <div className="friends-name">{props.friend.name}</div>
+        <div className="friends-name">{props.friend.email}</div>
       </Link>
     </div>
   );
