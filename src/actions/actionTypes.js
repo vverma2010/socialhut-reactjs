@@ -27,3 +27,13 @@ export const FETCH_USER_PROFILE = 'FETCH_USER_PROFILE';
 // friends
 export const FETCH_FRIENDS_SUCCESS = 'FETCH_FRIENDS_SUCCESS';
 export const ADD_FRIEND = 'ADD_FRIEND';
+export const REMOVE_FRIEND = 'REMOVE_FRIEND';
+
+// Add posts
+export const ADD_POST = 'ADD_POST';
+
+// Add Comments
+export const ADD_COMMENT = 'ADD_COMMENT';
+
+// post-likes
+export const UPDATE_POST_LIKES= 'UPDATE_POST_LIKES';

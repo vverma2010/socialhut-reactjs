@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue''Roboto',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue' 'Roboto',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,6 +33,9 @@ code {
 
 .no-btn {
   border: none;
+  background: none;
+
+
 }
 
 .no-btn:focus {
@@ -83,7 +86,7 @@ code {
   display: flex;
 }
 
-.post-avatar>div {
+.post-avatar > div {
   display: flex;
   flex-direction: column;
   padding-left: 12px;
@@ -101,9 +104,9 @@ code {
   line-height: 22px;
   cursor: pointer;
 }
-.post-avatar .post-author:hover{
-  text-decoration: none !important;
-  color:#ef7917;
+
+.post-avatar .post-author:hover {
+  color: #ef7917;
 }
 
 .post-avatar .post-time {
@@ -145,6 +148,8 @@ code {
 
 .post-actions img:hover {
   cursor: pointer;
+  transform: scale(1.2);
+
 }
 
 .post-like {
@@ -217,6 +222,20 @@ code {
   line-height: 16px;
   color: #616161;
   margin-left: 8px;
+}
+
+.like-count img {
+  display: block;
+  width: 10px;
+  color: #616161;
+  margin-left: 4px;
+  padding-top: 3px;
+}
+
+.like-count img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  color: red;
 }
 
 .post-comment-content {
@@ -309,7 +328,7 @@ nav .nav-links ul li a {
 
 nav .nav-links ul li a:hover {
   text-decoration: none;
-  color:#ff4301;
+  color: #ff4301;
 }
 
 nav .nav-links ul li:hover {
@@ -401,7 +420,7 @@ nav .nav-links ul li:hover {
 
 .friends-list {
   background: #383a3a;
-  margin-left: 50px;
+  margin-left: 80px;
   flex-grow: 0.2;
   height: 50vh;
   box-sizing: border-box;
@@ -483,7 +502,7 @@ nav .nav-links ul li:hover {
   /* border: 1px solid rgba(0, 0, 0, 0.12); */
   border: none;
   background-color: #131819;
-  color:#ef7917;
+  color: #ef7917;
   box-sizing: border-box;
   border-radius: 6px;
   width: 100%;
@@ -535,8 +554,7 @@ nav .nav-links ul li:hover {
   width: 40%;
   border: none;
 
-  box-shadow: 7px 7px 15px #000000,
-    -7px -7px 15px #3d4652;
+  box-shadow: 7px 7px 15px #000000, -7px -7px 15px #3d4652;
   /* filter: invert(1) hue-rotate(180deg); */
 }
 
@@ -614,6 +632,7 @@ nav .nav-links ul li:hover {
 
 .settings .field input {
   margin-top: 6px;
+  color: #ff4d00;
 }
 
 .settings .field-value {
@@ -622,13 +641,13 @@ nav .nav-links ul li:hover {
 
 /* CREATEPOST */
 .create-post {
-  background: white;
-  border: 1px solid #e0e0e0;
+  background: #383a3a;
+  /* border: 1px solid #e0e0e0; */
   box-sizing: border-box;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
-.create-post>div {
+.create-post > div {
   padding: 10px;
   border-top: 1px solid #d0d0d0;
   display: flex;
@@ -636,33 +655,38 @@ nav .nav-links ul li:hover {
 }
 
 .create-post textarea {
-  height: 90px;
-  padding: 10px;
+  height: 60px;
+  background: #383a3a;
+  padding: 20px;
   width: 100%;
   box-sizing: border-box;
   font-size: 15px;
   border: none;
   resize: none;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  color: wheat;
 }
 
 #add-post-btn {
-  width: 112px;
-  height: 42px;
+  width: 92px;
+  height: 32px;
   left: 111.5px;
   top: 0px;
   background: #ef7917;
-  border-radius: 3px;
+  border-radius: 10px;
   color: #fff;
   font-size: 16px;
+  border: none;
 }
 
 #add-post-btn:focus,
 .create-post textarea:focus {
   outline: none;
+  /* background:#ff4d00 ; */
 }
 
 #add-post-btn:hover {
   cursor: pointer;
+  /* background:#ff4d00 ; */
 }

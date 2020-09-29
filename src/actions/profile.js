@@ -40,11 +40,15 @@ export function fetchUserProfile(userId) {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.success) {
+        // if (data.success) {
           dispatch(userProfileSuccess(data.data.user));
-        } else {
-          dispatch(userProfileFailure(data.message));
-        }
+
+        //   if (data.data.token) {
+        //     localStorage.setItem('token', data.data.token);
+        //   }
+        // } else {
+        //   dispatch(userProfileFailure(data.message));
+        // }
       });
   };
 }
