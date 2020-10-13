@@ -34,8 +34,6 @@ code {
 .no-btn {
   border: none;
   background: none;
-
-
 }
 
 .no-btn:focus {
@@ -149,7 +147,6 @@ code {
 .post-actions img:hover {
   cursor: pointer;
   transform: scale(1.2);
-
 }
 
 .post-like {
@@ -367,17 +364,16 @@ nav .nav-links ul li:hover {
 }
 
 .search-results {
-  background: #fff;
+  background: #383a3a;
   flex-grow: 1;
   border-radius: 0 0 3px 3px;
   position: absolute;
   width: 100%;
   top: 40px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #000000;
   z-index: 100;
   max-height: 452px;
-  overflow: scroll;
-  display: none;
+  overflow: auto;
 }
 
 .search-results ul {
@@ -388,7 +384,13 @@ nav .nav-links ul li:hover {
 
 .search-results ul a {
   text-decoration: none;
-  color: black;
+  /* color: black; */
+  color: #616161;
+}
+
+.search-results ul a span {
+  /* margin-top: -8px; */
+  padding-top: -4px;
 }
 
 .search-results-row {

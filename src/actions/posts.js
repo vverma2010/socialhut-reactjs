@@ -1,5 +1,6 @@
 import {
   ADD_COMMENT,
+  // UPDATE_COMMENT_LIKES,
   UPDATE_POSTS,
   UPDATE_POST_LIKES,
 } from '../actions/actionTypes';
@@ -86,7 +87,7 @@ export function createComment(content, postId) {
   };
 }
 
-export function addLike(id, likeType, userId) {
+export function addPostLike(id, likeType, userId) {
   return (dispatch) => {
     const url = APIurls.toggleLike(id, likeType);
     fetch(url, {
@@ -114,3 +115,32 @@ export function addLikeToStore(postId, userId) {
     userId: userId,
   };
 }
+
+// export function addCommentLike(id, likeType, userId) {
+//   return (dispatch) => {
+//     const url = APIurls.toggleLike(id, likeType);
+//     fetch(url, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/x-www-form-urlencoded',
+//         Authorization: `Bearer ${getAuthTokenFromLocalStorage()}`,
+//       },
+//     })
+//       .then((response) => response.json())
+//       .then((data) => {
+//         console.log('data', data);
+
+//         if (data.success) {
+//           dispatch(addCommentLikeToStore(id, userId));
+//         }
+//       });
+//   };
+// }
+
+// export function addCommentLikeToStore(postId, userId) {
+//   return {
+//     type: UPDATE_COMMENT_LIKES,
+//     postId: postId,
+//     userId: userId,
+//   };
+// }

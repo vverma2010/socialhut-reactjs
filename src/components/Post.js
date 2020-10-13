@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Comment from './Comment';
 import { PropTypes } from 'prop-types';
-import { addLike, createComment } from '../actions/posts';
+import { addPostLike, createComment } from '../actions/posts';
 
 class Post extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class Post extends Component {
 
   handlePostLike = () => {
     const { post, user } = this.props;
-    this.props.dispatch(addLike(post._id, 'Post', user._id));
+    this.props.dispatch(addPostLike(post._id, 'Post', user._id));
   };
 
   render() {

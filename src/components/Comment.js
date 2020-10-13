@@ -1,4 +1,10 @@
 import React from 'react';
+// import { addCommentLike } from '../actions/posts';
+
+// handleCommentLike = () => {
+//   const { comment, user } = this.props;
+//   this.props.dispatch(addCommentLike(comment._id, 'Comment', user._id));
+// };
 
 function Comment({ comment }) {
   return (
@@ -7,14 +13,14 @@ function Comment({ comment }) {
         <span className="post-comment-author">{comment.user.name}</span>
         <span className="post-comment-time">a minute ago</span>
         <span className="post-comment-likes">{comment.likes.length}</span>
-        <span className="like-count">
+        <button className="like-count no-btn">
           <img
             src="https://image.flaticon.com/icons/svg/1077/1077035.svg"
             alt="like-icon"
-            // className="post-like"
           />
-        </span>
+        </button>
       </div>
+
       <div className="post-comment-content">{comment.content}</div>
     </div>
   );
