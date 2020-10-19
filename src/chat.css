@@ -1,0 +1,110 @@
+.chat-container {
+  position: fixed;
+  height: 410px;
+  width: 300px;
+  bottom: 0;
+  right: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+.chat-header {
+  font-size: 20px;
+  padding: 10px;
+  background: #131419;
+  color: #fff;
+  height: 43px;
+  box-sizing: border-box;
+  display: flex;
+  /* border: 1px solid #131419; */
+  align-items: center;
+  justify-content: space-between;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.chat-header img:hover {
+  cursor: pointer;
+}
+.chat-messages {
+  height: 320px;
+  background-image: url(https://wallpapercave.com/wp/wp4410714.jpg);
+  background-size: cover;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+.chat-messages .chat-bubble {
+  background: #e5e5e5;
+  margin: 8px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  position: relative;
+  color: black;
+}
+.chat-messages .other-chat:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-right-color: #e5e5e5;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -1px;
+  margin-left: -10px;
+}
+.chat-messages .other-chat {
+  text-align: -webkit-left;
+}
+.chat-messages .self-chat {
+  background: #b0ffb3;
+  align-items: right;
+  text-align: -webkit-right;
+}
+.chat-messages .self-chat:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-left-color: #b0ffb3;
+  border-right: 0;
+  border-bottom: 0;
+  margin-top: -1px;
+  margin-right: -10px;
+}
+.chat-footer {
+  height: 45px;
+  box-sizing: border-box;
+  display: flex;
+  background-color: #131419;
+  border-radius: 10px;
+}
+.chat-footer input {
+  width: 90%;
+  outline: none;
+  font-size: 17px;
+  padding: 7px;
+  background-color: #383a3a;
+  border: none;
+  border-radius: 10px;
+  margin: 7px;
+  color: white;
+}
+.chat-footer button {
+  background: #ef7917;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-radius: 45%;
+  margin: 7px;
+  padding-top: 6px;
+}
+.chat-footer button:hover {
+  cursor: pointer;
+}

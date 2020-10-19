@@ -12,6 +12,7 @@ import FriendsListItem from './FriendsListItem';
 import CreatePost from './CreatePost';
 import Post from './Post';
 import Comment from './Comment';
+import Chat from './Chat';
 export {
   PostsList,
   App,
@@ -27,4 +28,5 @@ export {
   CreatePost,
   Post,
   Comment,
+  Chat,
 };
